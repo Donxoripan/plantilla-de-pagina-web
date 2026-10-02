@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000011;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Ccircle cx='15' cy='20' r='1.2' fill='%23ffffff' opacity='0.9'/%3E%3Ccircle cx='45' cy='80' r='0.6' fill='%23ffffff' opacity='0.5'/%3E%3Ccircle cx='80' cy='15' r='1' fill='%23ffffff' opacity='0.8'/%3E%3Ccircle cx='110' cy='90' r='0.8' fill='%23ffffff' opacity='0.6'/%3E%3Ccircle cx='140' cy='40' r='1.3' fill='%23ffffff' opacity='0.7'/%3E%3Ccircle cx='170' cy='130' r='0.5' fill='%23ffffff' opacity='0.4'/%3E%3Ccircle cx='30' cy='150' r='0.9' fill='%23ffffff' opacity='0.6'/%3E%3Ccircle cx='60' cy='170' r='1.1' fill='%23ffffff' opacity='0.8'/%3E%3Ccircle cx='100' cy='55' r='0.7' fill='%23ffffff' opacity='0.5'/%3E%3Ccircle cx='160' cy='75' r='1' fill='%23ffffff' opacity='0.7'/%3E%3Ccircle cx='190' cy='20' r='0.8' fill='%23ffffff' opacity='0.6'/%3E%3Ccircle cx='5' cy='100' r='1.2' fill='%23ffffff' opacity='0.9'/%3E%3Ccircle cx='120' cy='180' r='0.6' fill='%23ffffff' opacity='0.4'/%3E%3Ccircle cx='75' cy='130' r='1' fill='%23ffffff' opacity='0.7'/%3E%3Ccircle cx='195' cy='160' r='1.1' fill='%23ffffff' opacity='0.8'/%3E%3C/svg%3E");
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+  color: #cccc00;
+  min-height: 100vh;
+}
+
+/* ===== MARQUEE BAR ===== */
+.wa-bar {
+  background: #003300;
+  border-bottom: 2px solid #00aa00;
+  padding: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.wa-bar a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+.wa-mq {
+  display: inline-block;
+  animation: mq 18s linear infinite;
+  font-size: 14px;
+  font-weight: bold;
+  color: #00ff00;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+@keyframes mq {
+  0% {
+    transform: translateX(110vw);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ===== LAYOUT ===== */
+.outer {
+  padding: 8px 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== WORDART ===== */
+.wordart-wrap {
+  text-align: center;
+  padding: 40px 0 4px;
+  position: relative;
+}
+
+.wa-canvas {
+  display: inline-block;
+  animation: spin3d 10s linear infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes spin3d {
+  0% {
+    transform: perspective(700px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(700px) rotateY(360deg);
+  }
+}
+
+.wa-text {
+  font-family: Impact, 'Arial Black', sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  background: linear-gradient(180deg,
+      #ffffff 0%, #ffff00 18%, #ffcc00 35%,
+      #ff9900 50%, #ffcc00 65%, #ffff00 82%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(3px 3px 0px #886600) drop-shadow(-1px -1px 0px #ffffaa);
+  line-height: 1;
+}
+
+.gif-corner {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 36px;
+  height: 36px;
+  image-rendering: pixelated;
+}
+
+/* ===== TWO COLUMN ===== */
+.layout {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.col-left {
+  display: table-cell;
+  width: 192px;
+  vertical-align: top;
+  padding-right: 8px;
+}
+
+.col-main {
+  display: table-cell;
+  vertical-align: top;
+}
+
+/* ===== SIDEBAR BOXES ===== */
+.sbox {
+  border: 2px solid #cccc00;
+  background: #0a0a00;
+  padding: 6px;
+  margin-bottom: 8px;
+}
+
+.stitle {
+  background: #cccc00;
+  color: #000;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  padding: 2px 4px;
+  margin: -6px -6px 7px -6px;
+  letter-spacing: 1px;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.nav-a {
+  display: block;
+  color: #ffff00;
+  text-decoration: underline;
+  font-size: 13px;
+  padding: 2px 0;
+  line-height: 1.8;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.nav-a:hover {
+  color: #fff;
+  background: #333300;
+}
+
+/* ===== AD SLOTS ===== */
+.ad-label-bar {
+  border: 2px solid #cccc00;
+  padding: 3px;
+  background: #cccc00;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.ad-slot {
+  border: 2px dashed #888800;
+  background: repeating-linear-gradient(45deg, #050500, #050500 4px, #0a0a00 4px, #0a0a00 8px);
+  width: 180px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: #666600;
+  text-align: center;
+  line-height: 1.5;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.ad-slot-tall {
+  border: 2px dashed #888800;
+  background: repeating-linear-gradient(45deg, #050500, #050500 4px, #0a0a00 4px, #0a0a00 8px);
+  width: 180px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: #666600;
+  text-align: center;
+  line-height: 1.5;
+  overflow: hidden;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+/* ===== MAIN BOXES ===== */
+.mbox {
+  border: 2px solid #999900;
+  background: #050500;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.mbox-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffff00;
+  border-bottom: 1px solid #666600;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.wtext {
+  font-size: 14px;
+  color: #dddd88;
+  line-height: 1.8;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+hr.d {
+  border: none;
+  border-top: 1px solid #555500;
+  margin: 9px 0;
+}
+
+/* ===== CAT PLACEHOLDER ===== */
+.cat-wrap {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.cat-ph {
+  width: 160px;
+  height: 160px;
+  border: 3px solid #cccc00;
+  background: #111100;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #666600;
+  text-align: center;
+  line-height: 1.5;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.cat-cap {
+  font-size: 13px;
+  color: #ffff00;
+  text-align: center;
+  margin-top: 5px;
+  font-style: italic;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+/* ===== NEVER TEXT ===== */
+.never {
+  font-size: 13px;
+  color: #ffcc00;
+  line-height: 1.9;
+  word-break: break-word;
+  border: 1px solid #444400;
+  background: #030300;
+  padding: 8px;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+/* ===== LINK GRID ===== */
+.lgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.lnk {
+  display: block;
+  border: 2px outset #999900;
+  background: #1a1a00;
+  padding: 9px 4px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffff00;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.lnk:hover {
+  border-style: inset;
+  background: #2a2a00;
+  color: #fff;
+}
+
+.lnk small {
+  display: block;
+  font-weight: normal;
+  font-size: 10px;
+  color: #999900;
+  margin-top: 3px;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+/* ===== UNDER CONSTRUCTION ===== */
+.ucon {
+  border: 1px solid #888800;
+  background: repeating-linear-gradient(45deg, #0d0d00, #0d0d00 6px, #1a1a00 6px, #1a1a00 12px);
+  text-align: center;
+  padding: 5px;
+  font-size: 13px;
+  color: #ffcc00;
+  margin-top: 6px;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.blink {
+  animation: bl 1s step-end infinite;
+}
+
+@keyframes bl {
+  50% {
+    opacity: 0;
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: #444400;
+  margin-top: 8px;
+  padding-top: 5px;
+  border-top: 1px solid #333300;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
